@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geophysics 2025 | 期末總回顧</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Geophysics 2025</div>
+        <ul class="nav-links">
+            <li><a href="#phase1">基礎建置</a></li>
+            <li><a href="#phase2">進階探勘</a></li>
+            <li><a href="experiment.html" class="highlight-btn">實驗成果展</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>地球物理與資料處理</h1>
+            <p>從 Python 實作到野外震測的探索之旅 (Week 1 - 12)</p>
+            <a href="#timeline" class="cta-btn">開始回顧</a>
+        </div>
+    </header>
+
+    <section id="timeline" class="timeline-container">
+        
+        <div class="phase-title" id="phase1">
+            <h2>Phase 1: 基礎與理論 (Week 1-5)</h2>
+        </div>
+
+        <div class="timeline-item left">
+            <div class="content">
+                <span class="date">Week 1</span>
+                <h3>課程導論 & 環境建置</h3>
+                <p>熟悉 Python 環境、GitHub 與 Hugging Face 生態系。</p>
+                <div class="tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">Git</span>
+                </div>
+                <div class="links">
+                    <a href="https://earthton-111.hf.space/?logs=container&__theme=system&deep_link=FIFa0VgjVNQ" target="_blank">HF Space</a>
+                    <a href="https://earthearthton.blogspot.com/2025/09/blog-post.html" target="_blank">Blog 心得</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="timeline-item right">
+            <div class="content">
+                <span class="date">Week 2</span>
+                <h3>折射震測學理論</h3>
+                <p>幾何震測學推導、Snell's Law 與層狀構造解析。</p>
+                <div class="tags">
+                    <span class="tag">ObsPy</span>
+                    <span class="tag">PyGMT</span>
+                </div>
+                <button class="modal-btn" onclick="showModal('w2-detail')">查看公式推導</button>
+            </div>
+        </div>
+
+        <div class="timeline-item left special-card">
+            <div class="content">
+                <span class="date">Week 3</span>
+                <h3>校園野外震測實驗</h3>
+                <p>實際操作震測儀，進行校園淺層地層探勘。</p>
+                <a href="experiment.html" class="full-link-btn">👉 進入實驗成果特輯</a>
+            </div>
+        </div>
+
+        <div class="timeline-item right">
+            <div class="content">
+                <span class="date">Week 4</span>
+                <h3>專題演講：透視地球</h3>
+                <p>甘禮有博士：從走時層析到全波形逆推 (FWI)。</p>
+                <p class="quote">"人類鑽井僅達地球半徑 0.19%，其餘皆賴震波探測。"</p>
+            </div>
+        </div>
+
+        <div class="timeline-item left">
+            <div class="content">
+                <span class="date">Week 5</span>
+                <h3>互動程式開發</h3>
+                <p>將折射理論轉化為 Web App。</p>
+                <div class="links">
+                    <a href="https://huggingface.co/spaces/earthton/homework8" target="_blank">互動程式 (HF)</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="phase-title" id="phase2">
+            <h2>Phase 2: 重力與板塊 (Week 6-12)</h2>
+        </div>
+
+        <div class="timeline-item right">
+            <div class="content">
+                <span class="date">Week 6-7</span>
+                <h3>重力探勘與 AI 應用</h3>
+                <p>重力異常修正、Gemini API 與 Dify 知識庫建置。</p>
+                <div class="links">
+                    <a href="https://github.com/earthearthton-prog/homework7_u11310016" target="_blank">GitHub</a>
+                    <a href="https://www.notion.so/1-2-3--2949e8c6167d81bb999bd521da9b8021" target="_blank">Notion 筆記</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="timeline-item left">
+            <div class="content">
+                <span class="date">Week 9-10</span>
+                <h3>板塊構造與地震</h3>
+                <p>利用 PyGMT 繪製全球震央與板塊邊界。</p>
+                <div class="links">
+                    <a href="https://github.com/earthearthton-prog/geophysics-class-2025/blob/main/U11310016.ipynb" target="_blank">Jupyter Notebook</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="timeline-item right">
+            <div class="content">
+                <span class="date">Week 11-12</span>
+                <h3>地磁學與期中成果</h3>
+                <p>地磁倒轉證據、ObsPy 波形處理。</p>
+                <div class="links">
+                    <a href="https://earthearthton-prog.github.io/intro-learnPYGMT/" target="_blank">期中成果網頁</a>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <footer>
+        <p>Copyright © 2025 Geophysics Class | Designed by U11310016</p>
+    </footer>
+
+    <div id="w2-detail" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('w2-detail')">&times;</span>
+            <h3>幾何震測公式</h3>
+            <p>截距時間公式：</p>
+            <div class="formula">$$h = \frac{T_i V_1 V_2}{2\sqrt{V_2^2 - V_1^2}}$$</div>
+            <p>利用斜率求出 $V_1, V_2$，再代入截距時間 $T_i$ 即可求得厚度。</p>
+        </div>
+    </div>
+    
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
