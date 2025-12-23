@@ -117,9 +117,7 @@ st.plot(outfile="waveform.png")
             <p>這週的重點在於「工具整合」。我使用 Dify 平台串接 Google Gemini API，並將其整合到 Notion 中。</p>
             <p>這個工作流可以幫助我快速整理地科文獻、摘要演講內容，大幅提升了學習效率。</p>
         `,
-       iframe: "", // ❌ Notion 不給嵌入，這裡要留空
         link: "https://www.notion.so/1-2-3--2949e8c6167d81bb999bd521da9b8021", // ✅ 改放這裡，會變成按鈕
-        image: "" // 💡 建議：你可以截圖你的 Notion 畫面，存成 "images/week7_notion.jpg" 放這裡，版面會比較好看！
     },
     8: {
         title: "Week 08: 期中考",
