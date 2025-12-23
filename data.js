@@ -34,6 +34,7 @@ const courseData = {
             <h3>資料處理技能</h3>
             <p>初步接觸了 pygmt 與 obspy，為後續的繪圖與波形分析打下基礎。</p>
         `,
+        image:"images/21.jpg",
         link: "https://oceanicdayi.blogspot.com/2025/09/blog-post_30.html"
     },
     3: {
