@@ -4,7 +4,7 @@ const courseData = {
     1: {
         title: "Week 01: 課程啟航與工具建置",
         date: "9/10",
-        tags: ["Github", "Hugging Face", "AI Tools"],
+        tags: ["Github", "Hugging Face", "AI Tools","GoogleBlogger"],
         desc: "建立數位工作環境，熟悉 Codespace 與 AI 輔助學習工作流。",
         content: `
             <h3>課程介紹與工具學習</h3>
@@ -15,7 +15,7 @@ const courseData = {
             <p>這讓我學會如何精準地與 AI 溝通以產出教學內容。</p>
             <h3>Googleblogger 實作</h3>
             <p>我利用 Googleblogger 建立了一個課程介紹的互動網頁，並成功部署。</p>
-            <p><strong>使用的 AI 提示詞：</strong>你是一個地球物理教師，你想要讓同學瞭界上課內容，並對課程產生期待，進而引發興趣。參考本課程相關資料，產生一個放在google blogger上的ＨＴＭＬ檔案。</p>
+            <p><strong>使用的 AI 提示詞：</strong>「你是一個地球物理教師，你想要讓同學瞭界上課內容，並對課程產生期待，進而引發興趣。參考本課程相關資料，產生一個放在google blogger上的ＨＴＭＬ檔案。」</p>
         `,
         iframe: "https://earthton-111.hf.space/?logs=container&__theme=system&deep_link=FIFa0VgjVNQ",
         link: "https://oceanicdayi.blogspot.com/",
@@ -196,6 +196,7 @@ st.plot(outfile="waveform.png")
             <h3>岩石的秘密羅盤</h3>
             <p>本週深入探討「是誰推動了大陸？」。</p>
             <p>重點在於<strong>視極移曲線 (Apparent Polar Wander Path, APWP)</strong>。透過測量不同年代岩石的古地磁方向，發現磁極似乎在移動，但實際上是大陸板塊在移動。這是板塊構造學說的重要證據。</p>
+        iframe: "https://earthton-111.hf.space/?logs=container&__theme=system&deep_link=FIFa0VgjVNQ"
         `
     },
     12: {
