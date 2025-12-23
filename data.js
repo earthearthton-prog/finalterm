@@ -70,7 +70,6 @@ const courseData = {
                 "images/18.png",
                 "images/19.png"
         ],
-        link: "https://oceanicdayi.blogspot.com/2025/09/924.htm"
     },
     4: {
         title: "Week 04: 專題演講 - 地球的 CT 掃描",
@@ -110,7 +109,7 @@ st.plot(outfile="waveform.png")
             </pre>
             <p>透過程式自動化抓取數據，比傳統手動下載效率高出許多。</p>
         `,
-        image: "images/waveform.png" // 記得放程式跑出來的圖
+        link:"https://github.com/earthearthton-prog/homework7_u11310016"
     },
     6: {
         title: "Week 06: 重力探勘與異常校正",
@@ -169,7 +168,7 @@ st.plot(outfile="waveform.png")
             </ul>
         `,
         link: "https://colab.research.google.com/github/earthearthton-prog/geophysics-class-2025/blob/main/U11310016.ipynb",
-        image: "images/week9_plate.png" // 記得放 PyGMT 跑出來的圖
+        image: "images/20.png" // 記得放 PyGMT 跑出來的圖
     },
     10: {
         title: "Week 10: PyGMT 教學網站製作",
