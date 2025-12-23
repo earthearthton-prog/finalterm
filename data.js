@@ -51,7 +51,7 @@ const courseData = {
             <p>這次實驗讓我深刻體會到「信噪比 (SNR)」在野外探勘中的重要性。</p>
         `,
         image:"images/97.png",
-        //pdf: "files/week3_talk.pdf",
+        pdf: "files/week3_talk.pdf",
         link: "https://oceanicdayi.blogspot.com/2025/09/924.htm"
     },
     4: {
