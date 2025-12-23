@@ -14,7 +14,7 @@ const courseData = {
             <p><strong>使用的 AI 提示詞：</strong>「你是一位地球物理學教師，擅長教導學生，以簡單有趣的方式說明課程內容，請參考圖片中的目錄，並產生地球物理概論的說明文件...」</p>
             <p>這讓我學會如何精準地與 AI 溝通以產出教學內容。</p>
         `,
-        iframe: "https://earthton-homework8.hf.space",
+        iframe: "https://earthton-111.hf.space/?logs=container&__theme=system&deep_link=FIFa0VgjVNQ",
         link: "https://oceanicdayi.blogspot.com/"
     },
     2: {
