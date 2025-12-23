@@ -199,7 +199,7 @@ st.plot(outfile="waveform.png")
                 <li><strong>即時訊號處理：</strong>內建 Bandpass/Highpass 濾波器，方便震相判讀。</li>
             </ul>
         `,
-        iframe: "https://huggingface.co/spaces/cwadayi/Eq_demo"
+        iframe: "hhttps://cwadayi-eq-demo.hf.space"
     },
     14: {
         title: "Week 14: 專題演講 - 黃有志博士",
