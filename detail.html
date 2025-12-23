@@ -23,8 +23,27 @@
         <div class="detail-content">
             <div id="page-content"></div>
 
-            <div id="img-container" style="display:none; text-align:center;">
-                <h3 style="text-align:left;">成果展示圖</h3>
+            <div id="pdf-wrapper" style="display:none; margin-top:30px; height: 800px;">
+                <h3 style="text-align:left; margin-bottom: 15px;">完整簡報 / 報告預覽</h3>
+                <iframe id="page-pdf" src="" width="100%" height="100%" style="border: none; border-radius: 8px;">
+                </iframe>
+                <p style="text-align:center; font-size:0.9rem; color:#888; margin-top:10px;">
+                    無法預覽？<a id="pdf-download" href="" target="_blank" style="color:var(--primary);">點此下載 PDF</a>
+                </p>
+            </div>
+
+            <div id="slideshow-wrapper" style="display:none; margin-top:30px;">
+                <h3 style="text-align:left;">簡報展示 (點擊切換)</h3>
+                <div class="slideshow-container">
+                    <div class="slide-counter" id="slide-counter">1 / 5</div>
+                    <img id="slide-img" src="" style="width:100%; display:block;" alt="Slide">
+                    <button class="slide-btn prev" onclick="changeSlide(-1)">&#10094;</button>
+                    <button class="slide-btn next" onclick="changeSlide(1)">&#10095;</button>
+                </div>
+            </div>
+
+            <div id="img-container" style="display:none; text-align:center; margin-top:30px;">
+                <h3 style="text-align:left;">成果展示</h3>
                 <img id="page-image" src="" class="img-fluid" alt="成果圖片">
             </div>
 
@@ -43,11 +62,12 @@
 
     <script src="data.js"></script>
     <script>
-        // 解析網址參數 ?week=X
         const urlParams = new URLSearchParams(window.location.search);
         const week = urlParams.get('week');
+        
+        let currentSlideIndex = 0;
+        let currentSlides = [];
 
-        // 讀取資料並渲染
         if (week && courseData[week]) {
             const data = courseData[week];
             
@@ -56,40 +76,64 @@
             document.getElementById('page-desc').innerText = data.desc;
             document.getElementById('page-content').innerHTML = data.content;
 
-            // 處理 Tags
+            // Tags
             const tagsContainer = document.getElementById('page-tags');
-            data.tags.forEach(tag => {
-                const span = document.createElement('span');
-                span.className = 'tag';
-                span.innerText = tag;
-                tagsContainer.appendChild(span);
-            });
+            if(data.tags){
+                data.tags.forEach(tag => {
+                    const span = document.createElement('span');
+                    span.className = 'tag';
+                    span.innerText = tag;
+                    tagsContainer.appendChild(span);
+                });
+            }
 
-            // 處理 Iframe
+            // --- 核心邏輯：決定顯示 PDF、輪播 還是 單張圖 ---
+            
+            if (data.pdf) {
+                // 1. 如果有 PDF
+                document.getElementById('pdf-wrapper').style.display = 'block';
+                document.getElementById('page-pdf').src = data.pdf;
+                document.getElementById('pdf-download').href = data.pdf;
+            } 
+            else if (data.slides && data.slides.length > 0) {
+                // 2. 如果有 Slides 陣列
+                document.getElementById('slideshow-wrapper').style.display = 'block';
+                currentSlides = data.slides;
+                showSlide(0);
+            } 
+            else if (data.image) {
+                // 3. 如果只有單張 Image
+                document.getElementById('img-container').style.display = 'block';
+                document.getElementById('page-image').src = data.image;
+            }
+
+            // 處理外部嵌入 (Demo)
             if (data.iframe) {
                 document.getElementById('iframe-wrapper').style.display = 'block';
                 document.getElementById('page-iframe').src = data.iframe;
             }
 
-            // 處理圖片
-            if (data.image) {
-                document.getElementById('img-container').style.display = 'block';
-                document.getElementById('page-image').src = data.image;
-            }
-
-            // 處理外部連結
+            // 處理按鈕連結
             if (data.link) {
                 document.getElementById('link-wrapper').style.display = 'block';
                 document.getElementById('page-link').href = data.link;
             }
             
-            // 強制重繪 MathJax 公式
-            if (window.MathJax) {
-                MathJax.typesetPromise();
-            }
+            if (window.MathJax) MathJax.typesetPromise();
         } else {
             document.getElementById('page-title').innerText = "找不到資料";
-            document.getElementById('page-content').innerHTML = "<p>請確認網址參數是否正確。</p>";
+        }
+
+        function changeSlide(n) {
+            showSlide(currentSlideIndex + n);
+        }
+
+        function showSlide(n) {
+            if (n >= currentSlides.length) { currentSlideIndex = 0; }
+            else if (n < 0) { currentSlideIndex = currentSlides.length - 1; }
+            else { currentSlideIndex = n; }
+            document.getElementById('slide-img').src = currentSlides[currentSlideIndex];
+            document.getElementById('slide-counter').innerText = `${currentSlideIndex + 1} / ${currentSlides.length}`;
         }
     </script>
 </body>
