@@ -89,7 +89,13 @@ const courseData = {
                 <li><strong>走時層析 (Travel-Time Tomography)：</strong>僅利用波到達的時間，解析度較低，容易受「波陣面癒合」影響。</li>
                 <li><strong>全波形逆推 (Full-Waveform Inversion, FWI)：</strong>利用完整的波形資訊（振幅、相位），解析度極高，可解析與波長相當的構造，是目前的研究熱點。</li>
             </ul>
-        `
+        `,
+        slides:["images/22.png",
+                "images/23.png",
+                "images/24.png",
+                "images/25.png",
+                "images/26.png",
+        ],
     },
     5: {
         title: "Week 05: 深度探勘與 Obspy 實作",
@@ -226,16 +232,26 @@ st.plot(outfile="waveform.png")
         iframe: "https://cwadayi-eq-demo.hf.space"
     },
     14: {
-        title: "Week 14: 專題演講 - 黃有志博士",
+        title: "Week 14: 專題演講 - 探討構造地震的連鎖效應",
         date: "12/10",
         tags: ["Volcano", "Earthquake Interaction", "Seminar"],
-        desc: "從阿蘇火山到嘉南地震：探討構造地震的連鎖效應。",
+        desc: "黃有志博士從阿蘇火山到嘉南地震：探討構造地震的連鎖效應。",
         content: `
             <h3>演講心得</h3>
             <p>黃有志博士深入探討了 2016 熊本地震是否誘發阿蘇火山活動，證實了靜態應力變化的影響。</p>
             <h3>台灣嘉南地震警訊</h3>
             <p>針對台灣，黃博士指出近期嘉南群震 (2017-2024) 有「向西遷徙」的跡象，這與熊本地震主震前的模式驚人相似，提醒我們需對梅山斷層保持高度警戒。</p>
-        `
+        `,
+        slides:["images/27.png",
+                "images/28.png",
+                "images/29.png",
+                "images/30.png",
+                "images/31.png",
+                "images/32.png",
+                "images/33.png",
+                "images/34.png",
+                "images/35.png",
+        ],
     },
     15: {
         title: "Week 15: 專題演講 - AI 遇上地震學",
@@ -250,7 +266,12 @@ st.plot(outfile="waveform.png")
                 <li><strong>ARRU Phase Picker：</strong>利用 Attention U-Net 架構精準拾取 P/S 波。</li>
                 <li><strong>RED-PAN：</strong>專為即時預警設計，能處理訊號重疊與截斷問題，成功捕捉到被官方遺漏的餘震。</li>
             </ul>
-        `
+        `,slides:["images/36.png",
+                "images/37.png",
+                "images/38.png",
+                "images/39.png",
+                "images/40.png",
+        ],
     },
     16: {
         title: "Week 16: 期末專題發表",
