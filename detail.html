@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>課程詳細內容 | U11310016</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <div class="sub-header">
+        <div class="container">
+            <a href="index.html" class="back-btn">&larr; 返回課程時間軸</a>
+            <h1 id="page-title">Loading...</h1>
+            <p id="page-desc" class="subtitle"></p>
+            <div id="page-tags" class="tags" style="margin-top:15px; justify-content:center; display:flex;"></div>
+        </div>
+    </div>
+
+    <div class="container" style="max-width: 900px; padding-bottom: 80px;">
+        
+        <div class="detail-content">
+            <div id="page-content"></div>
+
+            <div id="img-container" style="display:none; text-align:center;">
+                <h3 style="text-align:left;">成果展示圖</h3>
+                <img id="page-image" src="" class="img-fluid" alt="成果圖片">
+            </div>
+
+            <div id="iframe-wrapper" style="display:none;">
+                <h3>Live Demo / 專案展示</h3>
+                <iframe id="page-iframe" src=""></iframe>
+            </div>
+
+            <div id="link-wrapper" style="display:none; margin-top:40px; text-align:center;">
+                <a id="page-link" href="" target="_blank" class="btn" style="padding: 12px 40px; font-size:1.1rem;">
+                    前往外部相關網頁 &rarr;
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script>
+        // 解析網址參數 ?week=X
+        const urlParams = new URLSearchParams(window.location.search);
+        const week = urlParams.get('week');
+
+        // 讀取資料並渲染
+        if (week && courseData[week]) {
+            const data = courseData[week];
+            
+            document.title = `${data.title} | 期末回顧`;
+            document.getElementById('page-title').innerText = data.title;
+            document.getElementById('page-desc').innerText = data.desc;
+            document.getElementById('page-content').innerHTML = data.content;
+
+            // 處理 Tags
+            const tagsContainer = document.getElementById('page-tags');
+            data.tags.forEach(tag => {
+                const span = document.createElement('span');
+                span.className = 'tag';
+                span.innerText = tag;
+                tagsContainer.appendChild(span);
+            });
+
+            // 處理 Iframe
+            if (data.iframe) {
+                document.getElementById('iframe-wrapper').style.display = 'block';
+                document.getElementById('page-iframe').src = data.iframe;
+            }
+
+            // 處理圖片
+            if (data.image) {
+                document.getElementById('img-container').style.display = 'block';
+                document.getElementById('page-image').src = data.image;
+            }
+
+            // 處理外部連結
+            if (data.link) {
+                document.getElementById('link-wrapper').style.display = 'block';
+                document.getElementById('page-link').href = data.link;
+            }
+            
+            // 強制重繪 MathJax 公式
+            if (window.MathJax) {
+                MathJax.typesetPromise();
+            }
+        } else {
+            document.getElementById('page-title').innerText = "找不到資料";
+            document.getElementById('page-content').innerHTML = "<p>請確認網址參數是否正確。</p>";
+        }
+    </script>
+</body>
+</html>

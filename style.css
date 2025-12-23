@@ -1,350 +1,231 @@
-/* 全域設定 */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;500;700&display=swap');
-
 :root {
-    --primary: #2c3e50;
-    --accent: #3498db;
-    --text: #333;
-    --bg: #f4f7f6;
-    --white: #ffffff;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Noto Sans TC', sans-serif;
-    scroll-behavior: smooth;
+    --primary: #00f2ff;    /* 科技青 - 重點色 */
+    --secondary: #ff0055;  /* 警示紅 - 強調色 */
+    --bg: #0b0b15;         /* 深空黑 - 背景 */
+    --card-bg: #161625;    /* 卡片背景 */
+    --text: #e0e0e0;       /* 文字顏色 */
 }
 
 body {
+    margin: 0;
+    font-family: 'Segoe UI', 'Microsoft JhengHei', sans-serif;
     background-color: var(--bg);
     color: var(--text);
+    overflow-x: hidden;
     line-height: 1.6;
 }
 
-/* 導航列 */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 5%;
-    background: var(--white);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+/* --- 背景動態 Canvas --- */
+#canvas-container {
     position: fixed;
-    width: 100%;
     top: 0;
-    z-index: 1000;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: radial-gradient(circle at center, #1b1b2f 0%, #000000 100%);
 }
 
-.logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--primary);
+/* --- 通用容器 --- */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: var(--text);
-    font-weight: 500;
-    transition: color 0.3s;
-}
-
-.nav-links a:hover {
-    color: var(--accent);
-}
-
-.highlight-btn {
-    background: var(--accent);
-    color: white !important;
-    padding: 8px 16px;
-    border-radius: 20px;
-}
-
-/* Hero Section */
-.hero {
-    height: 80vh;
-    background: linear-gradient(135deg, #2c3e50, #4ca1af);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* --- Header --- */
+header {
     text-align: center;
-    color: white;
-    padding-top: 60px;
+    padding: 80px 20px;
+    animation: fadeInDown 1s ease-out;
 }
 
-.hero h1 {
+h1 {
     font-size: 3rem;
-    margin-bottom: 1rem;
+    margin: 0;
+    background: linear-gradient(90deg, #fff, var(--primary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 20px rgba(0, 242, 255, 0.4);
 }
 
-.cta-btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 30px;
-    background: white;
-    color: var(--primary);
-    text-decoration: none;
-    border-radius: 30px;
-    font-weight: bold;
-    transition: transform 0.3s;
+.subtitle {
+    font-size: 1.2rem;
+    color: #888;
+    margin-top: 15px;
+    font-weight: 300;
 }
 
-.cta-btn:hover {
-    transform: scale(1.05);
-}
-
-/* Timeline */
-.timeline-container {
+/* --- Timeline (時間軸) --- */
+.timeline {
     position: relative;
-    max-width: 1000px;
     margin: 50px auto;
-    padding: 0 20px;
 }
 
-/* 中間的線 */
-.timeline-container::after {
+.timeline::after {
     content: '';
     position: absolute;
     width: 4px;
-    background-color: var(--accent);
+    background: var(--primary);
     top: 0;
     bottom: 0;
     left: 50%;
     margin-left: -2px;
+    box-shadow: 0 0 15px var(--primary);
 }
 
-.timeline-item {
+.card-container {
     padding: 10px 40px;
     position: relative;
-    background-color: inherit;
     width: 50%;
     box-sizing: border-box;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.6s ease;
 }
 
-.timeline-item.left { left: 0; }
-.timeline-item.right { left: 50%; }
-
-/* 圓點 */
-.timeline-item::after {
-    content: '';
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    right: -10px;
-    background-color: white;
-    border: 4px solid var(--accent);
-    top: 20px;
-    border-radius: 50%;
-    z-index: 1;
+.card-container.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-.timeline-item.right::after { left: -10px; }
+.left { left: 0; text-align: right; }
+.right { left: 50%; text-align: left; }
 
-/* 內容卡片 */
+/* --- 卡片內容 --- */
 .content {
-    padding: 20px;
-    background-color: white;
-    position: relative;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
+    padding: 25px;
+    background: var(--card-bg);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: left; /* 強制內容靠左 */
 }
 
 .content:hover {
     transform: translateY(-5px);
+    border-color: var(--primary);
+    box-shadow: 0 0 25px rgba(0, 242, 255, 0.15);
 }
 
 .date {
-    display: inline-block;
-    background: var(--primary);
-    color: white;
-    padding: 4px 10px;
-    border-radius: 4px;
-    font-size: 0.8rem;
-    margin-bottom: 10px;
-}
-
-.tags {
-    margin: 10px 0;
-}
-
-.tag {
-    background: #e0f7fa;
-    color: #006064;
-    padding: 2px 8px;
-    border-radius: 12px;
-    font-size: 0.8rem;
-    margin-right: 5px;
-}
-
-.links a {
-    display: inline-block;
-    margin-top: 10px;
-    margin-right: 10px;
-    color: var(--accent);
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.special-card .content {
-    border-left: 5px solid #e74c3c;
-    background: #fff5f5;
-}
-
-.full-link-btn {
-    display: block;
-    margin-top: 15px;
-    background: #e74c3c;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    text-decoration: none;
-    border-radius: 4px;
-}
-
-.phase-title {
-    text-align: center;
-    margin: 40px 0;
-    position: relative;
-    z-index: 2;
-}
-
-.phase-title h2 {
-    display: inline-block;
-    background: var(--primary);
-    color: white;
-    padding: 10px 20px;
-    border-radius: 30px;
-}
-
-/* Modal */
-.modal {
-    display: none; 
-    position: fixed; 
-    z-index: 2000; 
-    left: 0;
-    top: 0;
-    width: 100%; 
-    height: 100%; 
-    background-color: rgba(0,0,0,0.5); 
-}
-
-.modal-content {
-    background-color: white;
-    margin: 15% auto; 
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%; 
-    max-width: 500px;
-    border-radius: 10px;
-    position: relative;
-}
-
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.modal-btn {
-    margin-top: 10px;
-    background: none;
-    border: 1px solid var(--accent);
-    color: var(--accent);
-    padding: 5px 10px;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.modal-btn:hover {
-    background: var(--accent);
-    color: white;
-}
-
-/* 子網頁樣式 */
-.subpage-body {
-    background: #fdfdfd;
-}
-
-.sub-hero {
-    height: 50vh;
-    background: url('https://source.unsplash.com/1600x900/?geology,mountain') no-repeat center center/cover;
-    position: relative;
-}
-.sub-hero::before {
-    content: '';
-    position: absolute;
-    top:0; left:0; right:0; bottom:0;
-    background: rgba(0,0,0,0.5);
-}
-.sub-hero .hero-content {
-    position: relative;
-    z-index: 1;
-}
-
-.report-container {
-    max-width: 900px;
-    margin: -50px auto 50px;
-    padding: 0 20px;
-    position: relative;
-    z-index: 10;
-}
-
-.report-section {
-    margin-bottom: 40px;
-}
-
-.report-section h2 {
     color: var(--primary);
-    border-bottom: 2px solid var(--accent);
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-}
-
-.report-card, .card {
-    background: white;
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-}
-
-.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
-
-.stat-box {
-    background: white;
-    padding: 20px;
-    text-align: center;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-}
-
-.stat-box.highlight {
-    background: var(--accent);
-    color: white;
-}
-
-.stat-box .number {
-    display: block;
-    font-size: 2.5rem;
     font-weight: bold;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    display: block;
 }
 
-/* RWD 調整 */
+.card-title {
+    margin: 10px 0;
+    font-size: 1.4rem;
+    color: #fff;
+}
+
+.tags .tag {
+    display: inline-block;
+    background: rgba(0, 242, 255, 0.1);
+    color: var(--primary);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 25px;
+    background: linear-gradient(45deg, var(--primary), #00a8ff);
+    color: #000;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    filter: brightness(1.2);
+    box-shadow: 0 0 15px var(--primary);
+}
+
+/* --- 子網頁 (Detail Page) 樣式 --- */
+.sub-header {
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(11,11,21,1)), url('https://source.unsplash.com/1600x900/?galaxy,earth') no-repeat center/cover;
+    padding: 60px 20px;
+    text-align: center;
+    border-bottom: 2px solid var(--primary);
+}
+
+.back-btn {
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 1.1rem;
+    display: inline-block;
+    margin-bottom: 20px;
+    border: 1px solid var(--primary);
+    padding: 5px 15px;
+    border-radius: 20px;
+}
+
+.back-btn:hover {
+    background: var(--primary);
+    color: #000;
+}
+
+.detail-content {
+    background: #13131f;
+    padding: 40px;
+    border-radius: 15px;
+    margin-top: -30px;
+    box-shadow: 0 -10px 40px rgba(0,0,0,0.6);
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.detail-content h3 {
+    color: var(--primary);
+    border-left: 4px solid var(--primary);
+    padding-left: 15px;
+    margin-top: 30px;
+}
+
+.img-fluid {
+    max-width: 100%;
+    border-radius: 8px;
+    border: 1px solid #333;
+    margin: 20px 0;
+}
+
+pre {
+    background: #000;
+    padding: 15px;
+    border-radius: 8px;
+    overflow-x: auto;
+    border: 1px solid #333;
+    color: #0f0;
+}
+
+iframe {
+    width: 100%;
+    height: 600px;
+    border: none;
+    background: #fff;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+/* --- RWD --- */
 @media screen and (max-width: 768px) {
-    .timeline-container::after { left: 31px; }
-    .timeline-item { width: 100%; padding-left: 70px; padding-right: 25px; }
-    .timeline-item::after { left: 21px; }
-    .timeline-item.right { left: 0; }
-    
-    .grid-2, .grid-3 { grid-template-columns: 1fr; }
+    .timeline::after { left: 30px; }
+    .card-container { width: 100%; padding-left: 70px; padding-right: 10px; }
+    .card-container.left, .card-container.right { left: 0; text-align: left; }
+    h1 { font-size: 2rem; }
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
 }

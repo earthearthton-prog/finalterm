@@ -3,148 +3,181 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Geophysics 2025 | 期末總回顧</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>地球物理期末回顧 | U11310016</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="logo">Geophysics 2025</div>
-        <ul class="nav-links">
-            <li><a href="#phase1">基礎建置</a></li>
-            <li><a href="#phase2">進階探勘</a></li>
-            <li><a href="experiment.html" class="highlight-btn">實驗成果展</a></li>
-        </ul>
-    </nav>
-
-    <header class="hero">
-        <div class="hero-content">
-            <h1>地球物理與資料處理</h1>
-            <p>從 Python 實作到野外震測的探索之旅 (Week 1 - 12)</p>
-            <a href="#timeline" class="cta-btn">開始回顧</a>
-        </div>
+    <div id="canvas-container"></div>
+    
+    <header>
+        <h1>地球物理：探索與實踐</h1>
+        <div class="subtitle">113學年度第一學期 | 學生：張智詠 (U11310016)</div>
+        <p style="max-width: 600px; margin: 20px auto; color: #aaa;">
+            結合地震學理論、野外實驗、Python 數據分析與 AI 應用的完整學習歷程。
+        </p>
     </header>
 
-    <section id="timeline" class="timeline-container">
-        
-        <div class="phase-title" id="phase1">
-            <h2>Phase 1: 基礎與理論 (Week 1-5)</h2>
-        </div>
-
-        <div class="timeline-item left">
+    <div class="container timeline">
+        <div class="card-container left">
             <div class="content">
-                <span class="date">Week 1</span>
-                <h3>課程導論 & 環境建置</h3>
-                <p>熟悉 Python 環境、GitHub 與 Hugging Face 生態系。</p>
-                <div class="tags">
-                    <span class="tag">Python</span>
-                    <span class="tag">Git</span>
-                </div>
-                <div class="links">
-                    <a href="https://earthton-111.hf.space/?logs=container&__theme=system&deep_link=FIFa0VgjVNQ" target="_blank">HF Space</a>
-                    <a href="https://earthearthton.blogspot.com/2025/09/blog-post.html" target="_blank">Blog 心得</a>
-                </div>
+                <span class="date">9/10 - Week 01</span>
+                <h2 class="card-title">課程啟航與工具建置</h2>
+                <div class="tags"><span class="tag">Github</span><span class="tag">Hugging Face</span></div>
+                <p>熟悉 Codespace 與 AI 輔助學習工作流，部署首個 Gradio 應用。</p>
+                <a href="detail.html?week=1" class="btn">查看成果 &raquo;</a>
             </div>
         </div>
 
-        <div class="timeline-item right">
+        <div class="card-container right">
             <div class="content">
-                <span class="date">Week 2</span>
-                <h3>折射震測學理論</h3>
-                <p>幾何震測學推導、Snell's Law 與層狀構造解析。</p>
-                <div class="tags">
-                    <span class="tag">ObsPy</span>
-                    <span class="tag">PyGMT</span>
-                </div>
-                <button class="modal-btn" onclick="showModal('w2-detail')">查看公式推導</button>
+                <span class="date">9/17 - Week 02</span>
+                <h2 class="card-title">震測學基礎推導</h2>
+                <div class="tags"><span class="tag">Seismology</span><span class="tag">Math</span></div>
+                <p>推導臨界折射波走時公式與 Crossover Distance。</p>
+                <a href="detail.html?week=2" class="btn">查看推導 &raquo;</a>
             </div>
         </div>
 
-        <div class="timeline-item left special-card">
+        <div class="card-container left">
             <div class="content">
-                <span class="date">Week 3</span>
-                <h3>校園野外震測實驗</h3>
-                <p>實際操作震測儀，進行校園淺層地層探勘。</p>
-                <a href="experiment.html" class="full-link-btn">👉 進入實驗成果特輯</a>
+                <span class="date">9/24 - Week 03</span>
+                <h2 class="card-title">校園野外折射震測實驗</h2>
+                <div class="tags"><span class="tag">Experiment</span><span class="tag">Field Work</span></div>
+                <p>操作震測儀與 Geophone，分析地下分層構造與波速。</p>
+                <a href="detail.html?week=3" class="btn">閱讀實驗報告 &raquo;</a>
             </div>
         </div>
 
-        <div class="timeline-item right">
+        <div class="card-container right">
             <div class="content">
-                <span class="date">Week 4</span>
-                <h3>專題演講：透視地球</h3>
-                <p>甘禮有博士：從走時層析到全波形逆推 (FWI)。</p>
-                <p class="quote">"人類鑽井僅達地球半徑 0.19%，其餘皆賴震波探測。"</p>
+                <span class="date">10/1 - Week 04</span>
+                <h2 class="card-title">專題演講：地球 CT 掃描</h2>
+                <div class="tags"><span class="tag">Tomography</span><span class="tag">Seminar</span></div>
+                <p>甘禮有博士分享地震層析成像與全波形逆推技術。</p>
+                <a href="detail.html?week=4" class="btn">演講心得 &raquo;</a>
             </div>
         </div>
 
-        <div class="timeline-item left">
+        <div class="card-container left">
             <div class="content">
-                <span class="date">Week 5</span>
-                <h3>互動程式開發</h3>
-                <p>將折射理論轉化為 Web App。</p>
-                <div class="links">
-                    <a href="https://huggingface.co/spaces/earthton/homework8" target="_blank">互動程式 (HF)</a>
-                </div>
+                <span class="date">10/8 - Week 05</span>
+                <h2 class="card-title">深度探勘與 Obspy 實作</h2>
+                <div class="tags"><span class="tag">Python</span><span class="tag">ObsPy</span></div>
+                <p>使用 Python 連接 IRIS FDSN 下載並繪製地震波形。</p>
+                <a href="detail.html?week=5" class="btn">查看程式碼 &raquo;</a>
             </div>
         </div>
 
-        <div class="phase-title" id="phase2">
-            <h2>Phase 2: 重力與板塊 (Week 6-12)</h2>
-        </div>
-
-        <div class="timeline-item right">
+        <div class="card-container right">
             <div class="content">
-                <span class="date">Week 6-7</span>
-                <h3>重力探勘與 AI 應用</h3>
-                <p>重力異常修正、Gemini API 與 Dify 知識庫建置。</p>
-                <div class="links">
-                    <a href="https://github.com/earthearthton-prog/homework7_u11310016" target="_blank">GitHub</a>
-                    <a href="https://www.notion.so/1-2-3--2949e8c6167d81bb999bd521da9b8021" target="_blank">Notion 筆記</a>
-                </div>
+                <span class="date">10/15 - Week 06</span>
+                <h2 class="card-title">重力探勘與異常校正</h2>
+                <div class="tags"><span class="tag">Gravity</span><span class="tag">Gradio</span></div>
+                <p>探討 Free Air Anomaly 並製作互動展示程式。</p>
+                <a href="detail.html?week=6" class="btn">試玩 App &raquo;</a>
             </div>
         </div>
 
-        <div class="timeline-item left">
+        <div class="card-container left">
             <div class="content">
-                <span class="date">Week 9-10</span>
-                <h3>板塊構造與地震</h3>
-                <p>利用 PyGMT 繪製全球震央與板塊邊界。</p>
-                <div class="links">
-                    <a href="https://github.com/earthearthton-prog/geophysics-class-2025/blob/main/U11310016.ipynb" target="_blank">Jupyter Notebook</a>
-                </div>
+                <span class="date">10/22 - Week 07</span>
+                <h2 class="card-title">AI 賦能地科研究</h2>
+                <div class="tags"><span class="tag">Gemini</span><span class="tag">Dify</span></div>
+                <p>串接 Gemini API 與 Notion，打造自動化知識工作流。</p>
+                <a href="detail.html?week=7" class="btn">查看工作流 &raquo;</a>
             </div>
         </div>
 
-        <div class="timeline-item right">
-            <div class="content">
-                <span class="date">Week 11-12</span>
-                <h3>地磁學與期中成果</h3>
-                <p>地磁倒轉證據、ObsPy 波形處理。</p>
-                <div class="links">
-                    <a href="https://earthearthton-prog.github.io/intro-learnPYGMT/" target="_blank">期中成果網頁</a>
-                </div>
+        <div class="card-container right">
+            <div class="content" style="border-color: var(--secondary);">
+                <span class="date" style="color: var(--secondary);">10/29 - Week 08</span>
+                <h2 class="card-title">期中考</h2>
+                <p>檢驗震測學原理、公式推導及重力探勘學習成果。</p>
+                <a href="detail.html?week=8" class="btn">查看詳情 &raquo;</a>
             </div>
         </div>
 
-    </section>
-
-    <footer>
-        <p>Copyright © 2025 Geophysics Class | Designed by U11310016</p>
-    </footer>
-
-    <div id="w2-detail" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('w2-detail')">&times;</span>
-            <h3>幾何震測公式</h3>
-            <p>截距時間公式：</p>
-            <div class="formula">$$h = \frac{T_i V_1 V_2}{2\sqrt{V_2^2 - V_1^2}}$$</div>
-            <p>利用斜率求出 $V_1, V_2$，再代入截距時間 $T_i$ 即可求得厚度。</p>
+        <div class="card-container left">
+            <div class="content">
+                <span class="date">11/5 - Week 09</span>
+                <h2 class="card-title">板塊構造與 PyGMT 繪圖</h2>
+                <div class="tags"><span class="tag">PyGMT</span><span class="tag">Tectonics</span></div>
+                <p>分析加勒比板塊邊界特性並繪製地質圖。</p>
+                <a href="detail.html?week=9" class="btn">查看地圖 &raquo;</a>
+            </div>
         </div>
+
+        <div class="card-container right">
+            <div class="content">
+                <span class="date">11/12 - Week 10</span>
+                <h2 class="card-title">PyGMT 教學網站製作</h2>
+                <div class="tags"><span class="tag">Web</span><span class="tag">Tutorial</span></div>
+                <p>建立 PyGMT 教學資源，分享繪圖技巧。</p>
+                <a href="detail.html?week=10" class="btn">進入教學網 &raquo;</a>
+            </div>
+        </div>
+
+        <div class="card-container left">
+            <div class="content">
+                <span class="date">11/19 - Week 11</span>
+                <h2 class="card-title">古地磁與岩石磁學</h2>
+                <div class="tags"><span class="tag">Paleomagnetism</span></div>
+                <p>探討視極移曲線 (APWP) 與大陸漂移證據。</p>
+                <a href="detail.html?week=11" class="btn">學習筆記 &raquo;</a>
+            </div>
+        </div>
+
+        <div class="card-container right">
+            <div class="content">
+                <span class="date">11/26 - Week 12</span>
+                <h2 class="card-title">地球熱分布與地熱</h2>
+                <div class="tags"><span class="tag">Heat Flow</span></div>
+                <p>研究地殼熱流測量、模擬與地熱應用。</p>
+                <a href="detail.html?week=12" class="btn">查看內容 &raquo;</a>
+            </div>
+        </div>
+
+        <div class="card-container left">
+            <div class="content">
+                <span class="date">12/3 - Week 13</span>
+                <h2 class="card-title">互動式地震波形平台</h2>
+                <div class="tags"><span class="tag">Obspy</span><span class="tag">Gradio</span></div>
+                <p>整合 Obspy 與 Plotly，開發一站式地震分析工具。</p>
+                <a href="detail.html?week=13" class="btn">使用平台 &raquo;</a>
+            </div>
+        </div>
+
+        <div class="card-container right">
+            <div class="content">
+                <span class="date">12/10 - Week 14</span>
+                <h2 class="card-title">專題演講：黃有志博士</h2>
+                <div class="tags"><span class="tag">Volcano</span><span class="tag">Seminar</span></div>
+                <p>從阿蘇火山到嘉南地震：構造地震的連鎖效應。</p>
+                <a href="detail.html?week=14" class="btn">演講心得 &raquo;</a>
+            </div>
+        </div>
+
+        <div class="card-container left">
+            <div class="content">
+                <span class="date">12/17 - Week 15</span>
+                <h2 class="card-title">專題演講：AI 遇上地震學</h2>
+                <div class="tags"><span class="tag">AI</span><span class="tag">Deep Learning</span></div>
+                <p>廖勿渝博士：從深度學習到全自動化監測。</p>
+                <a href="detail.html?week=15" class="btn">演講心得 &raquo;</a>
+            </div>
+        </div>
+
+        <div class="card-container right">
+            <div class="content" style="border: 1px solid var(--primary);">
+                <span class="date">12/24 - Week 16</span>
+                <h2 class="card-title">期末專題發表</h2>
+                <p>整合 18 週所學，展示地球物理與資料科學的結合成果。</p>
+                <a href="detail.html?week=16" class="btn">本頁面 &raquo;</a>
+            </div>
+        </div>
+
     </div>
-    
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
     <script src="script.js"></script>
 </body>
 </html>
