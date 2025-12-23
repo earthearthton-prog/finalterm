@@ -50,8 +50,10 @@ const courseData = {
             <p>經計算，我們測得地下第一層厚度約為 <strong>5.96 公尺</strong>。</p>
             <p>這次實驗讓我深刻體會到「信噪比 (SNR)」在野外探勘中的重要性。</p>
         `,
-        image:"images/97.png",
-        pdf: "files/week3_talk.pdf",
+        slides:["images/1.png",
+                "images/2.png",
+                "images/3.png"
+        ],
         link: "https://oceanicdayi.blogspot.com/2025/09/924.htm"
     },
     4: {
