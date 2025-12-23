@@ -8,14 +8,18 @@ const courseData = {
         desc: "建立數位工作環境，熟悉 Codespace 與 AI 輔助學習工作流。",
         content: `
             <h3>課程介紹與工具學習</h3>
-            <p>本週是學期的開始，重點在於建立未來18週所需的數位環境。我申請了 Hugging Face 帳號，並學習如何使用 Github Codespace 進行雲端開發。</p>
+            <p>本週是學期的開始，重點在於建立未來18週所需的數位環境。我申請了 Hugging Face 帳號，並學習如何使用 Github Codespace 進行雲端開發。此外還學習如何運用googleblogger</p>
             <h3>Hugging Face Space 實作</h3>
             <p>我利用 Gradio 框架建立了一個地球物理概論的互動網頁，並成功部署。</p>
             <p><strong>使用的 AI 提示詞：</strong>「你是一位地球物理學教師，擅長教導學生，以簡單有趣的方式說明課程內容，請參考圖片中的目錄，並產生地球物理概論的說明文件...」</p>
             <p>這讓我學會如何精準地與 AI 溝通以產出教學內容。</p>
+            <h3>Googleblogger 實作</h3>
+            <p>我利用 Googleblogger 建立了一個課程介紹的互動網頁，並成功部署。</p>
+            <p><strong>使用的 AI 提示詞：</strong>你是一個地球物理教師，你想要讓同學瞭界上課內容，並對課程產生期待，進而引發興趣。參考本課程相關資料，產生一個放在google blogger上的ＨＴＭＬ檔案。</p>
         `,
         iframe: "https://earthton-111.hf.space/?logs=container&__theme=system&deep_link=FIFa0VgjVNQ",
-        link: "https://oceanicdayi.blogspot.com/"
+        link: "https://oceanicdayi.blogspot.com/",
+        link:"https://earthearthton.blogspot.com/2025/09/blog-post.html"
     },
     2: {
         title: "Week 02: 震測學基礎推導",
