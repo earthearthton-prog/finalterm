@@ -104,7 +104,7 @@ st.plot(outfile="waveform.png")
             <h3>Gradio 互動程式</h3>
             <p>為了展示 Free Air Anomaly 的概念，我製作了一個互動網頁，讓使用者可以調整高度參數，觀察重力值的變化。</p>
         `,
-        iframe: "https://huggingface.co/spaces/earthton/homework8",
+        iframe: "https://earthton-homework8.hf.space",
         link: "https://oceanicdayi.blogspot.com/2025/10/1015-2.html"
     },
     7: {
